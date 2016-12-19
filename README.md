@@ -1,8 +1,9 @@
 # kafka-study
-kafka 学习项目
+**kafka 学习项目**
 
-## 环境
+## 环境描述
 ### 开发环境
+- 操作系统: CentOS 6.5
 - 开发语言：Java 8
 - 依赖管理：Maven
 - zookeeper 3.4.8
@@ -24,5 +25,5 @@ kafka 学习项目
 | kafka      |  centosvm1     |
 
 ## Authors
-- gyfeng
+- gyfeng(_yuanfeng.guo@foxmail.com_)
 
