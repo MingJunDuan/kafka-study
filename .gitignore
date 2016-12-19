@@ -1,0 +1,16 @@
+# class file
+*.class
+
+# jar ..
+*.jar
+*.war
+*.ear
+
+# intelliJ IDEA config file
+.idea/
+*.iml
+out/
+
+# maven
+target/
+
