@@ -1,9 +1,9 @@
 # kafka-study
-**kafka 学习项目**
+**kafka 学习项目**，用于练习kafka java客户端连接练习！
 
 ## 环境描述
 ### 开发环境
-- 操作系统: CentOS 6.5
+- 操作系统：CentOS 6.5
 - 开发语言：Java 8
 - 依赖管理：Maven
 - zookeeper 3.4.8
