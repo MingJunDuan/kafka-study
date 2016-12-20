@@ -7,7 +7,6 @@ import org.apache.kafka.clients.consumer.Consumer;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
-import org.apache.kafka.common.TopicPartition;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -30,13 +29,11 @@ public class ConsumerSample {
         props.put("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
         Consumer<String, String> consumer = new KafkaConsumer<>(props);
         consumer.subscribe(Arrays.asList("test-topic-ProducerSample"));
-        TopicPartition partition = new TopicPartition("test-topic-ProducerSample", 0);
-        consumer.seekToBeginning(Arrays.asList(partition));
         boolean flag = true;
         while (flag) {
-            ConsumerRecords<String, String> records = consumer.poll(100);
+            ConsumerRecords<String, String> records = consumer.poll(2000);
             for (ConsumerRecord<String, String> record : records) {
-                LOGGER.info("offset = %d, key = %s, value = %s", record.offset(), record.key(), record.value());
+                LOGGER.info("offset = {}, key = {}, value = {}", record.offset(), record.key(), record.value());
             }
         }
     }

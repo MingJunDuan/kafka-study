@@ -4,7 +4,7 @@
     <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
         <Target>System.out</Target>
         <encoder>
-            <pattern>[%-5p] [%d] [%C:%L] - %m %n</pattern>
+            <pattern>[%d] [%p] [%C:%L] - %m %n</pattern>
             <charset>utf-8</charset>
         </encoder>
         <!-- 此日志appender是为开发使用，只配置最底级别，控制台输出的日志级别是大于或等于此级别的日志信息 -->
@@ -13,6 +13,10 @@
         </filter>
     </appender>
 
+    <logger name="org.apache.kafka" additivity="false">
+        <appender-ref ref="stdout"/>
+        <level value="ERROR"></level>
+    </logger>
     <root level="debug">
         <appender-ref ref="stdout"/>
     </root>
