@@ -1,6 +1,6 @@
 package team.study.kafka.consumer;
 
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.Properties;
 
 import org.apache.kafka.clients.consumer.Consumer;
@@ -28,9 +28,8 @@ public class ConsumerSample {
         props.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
         props.put("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
         Consumer<String, String> consumer = new KafkaConsumer<>(props);
-        consumer.subscribe(Arrays.asList("test-topic-ProducerSample"));
-        boolean flag = true;
-        while (flag) {
+        consumer.subscribe(Collections.singletonList("test-topic-ProducerSample"));
+        while (true) {
             ConsumerRecords<String, String> records = consumer.poll(2000);
             for (ConsumerRecord<String, String> record : records) {
                 LOGGER.info("offset = {}, key = {}, value = {}", record.offset(), record.key(), record.value());
