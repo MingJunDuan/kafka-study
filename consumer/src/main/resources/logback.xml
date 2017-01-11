@@ -15,8 +15,9 @@
 
     <logger name="org.apache.kafka" additivity="false">
         <appender-ref ref="stdout"/>
-        <level value="ERROR"></level>
+        <level value="INFO"/>
     </logger>
+
     <root level="debug">
         <appender-ref ref="stdout"/>
     </root>
